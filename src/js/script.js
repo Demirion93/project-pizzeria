@@ -192,11 +192,11 @@
             // check if the option is not default
             
             if(!option.default){
-              price = price + option.price;
-                            
-              // add option price to price variable
-                            
-              price = option + price;
+              
+            // add option price to price variable
+            
+            price = price + option.price;             
+              
             }
           } else{
             
