@@ -13,7 +13,7 @@ class Cart{
 
     thisCart.initActions();
     
-    console.log('new Cart', thisCart);
+    // console.log('new Cart', thisCart);
   }
   getElements(element){
     const thisCart = this;
@@ -51,7 +51,7 @@ class Cart{
   add(menuProduct){
     const thisCart = this;
 
-    console.log('adding product', menuProduct);
+    // console.log('adding product', menuProduct);
 
     /* generate HTML based on template */
 
@@ -64,10 +64,10 @@ class Cart{
     /* add element to menu */
     
     thisCart.dom.productList.appendChild(generatedDOM);
-    console.log(thisCart.dom.productList);
+    // console.log(thisCart.dom.productList);
 
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-    console.log('thisCart.products', thisCart.products);
+    // console.log('thisCart.products', thisCart.products);
 
     thisCart.update();
   }
@@ -100,7 +100,7 @@ class Cart{
     thisCart.dom.subTotalPrice.innerHTML = thisCart.subTotalPrice;   
     thisCart.dom.deliveryFee.innerHTML = thisCart.deliveryFee;    
     
-    console.log(thisCart.deliveryFee, thisCart.totalNumber, thisCart.subTotalPrice, thisCart.totalPrice);
+    // console.log(thisCart.deliveryFee, thisCart.totalNumber, thisCart.subTotalPrice, thisCart.totalPrice);
   }
   remove(cartProduct){
     const thisCart = this;

@@ -16,7 +16,7 @@ class Product{
     thisProduct.initAmountWidget();
     thisProduct.processOrder();
     
-    console.log ('new Product:', thisProduct);
+    // console.log ('new Product:', thisProduct);
   }
   
   renderInMenu(){
@@ -86,7 +86,7 @@ class Product{
 
   initOrderForm(){
     const thisProduct = this;
-    console.log(thisProduct);
+    // console.log(thisProduct);
     thisProduct.form.addEventListener('submit', function(event){
       event.preventDefault();
       thisProduct.processOrder();
@@ -107,12 +107,12 @@ class Product{
   
   processOrder(){
     const thisProduct = this;
-    console.log(thisProduct);
+    // console.log(thisProduct);
     
     // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
     
     const formData = utils.serializeFormToObject(thisProduct.form);
-    console.log('formData', formData);
+    // console.log('formData', formData);
     
     // set price to default price
     
@@ -125,7 +125,7 @@ class Product{
       // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
       
       const param = thisProduct.data.params[paramId];
-      console.log(paramId, param);
+      // console.log(paramId, param);
 
       // for every option in this category
     
@@ -136,12 +136,12 @@ class Product{
         // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
       
         const option = param.options[optionId];
-        console.log(optionId, option);
+        // console.log(optionId, option);
 
         // check if there is param with a name of paramId in formData and if it includes optionId
         
         if(optionSelected){
-          console.log('optionId included in formData', optionId);
+          // console.log('optionId included in formData', optionId);
 
           // check if the option is not default
           
