@@ -2,8 +2,9 @@ import {settings, select, classNames} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import Home from './components/Home.js';
 
-const app = { 
+export const app = { 
   initPages: function(){
     const thisApp = this;
 
@@ -80,6 +81,14 @@ const app = {
     // const testProduct = new Product();
     // console.log('testProduct:', testProduct);
   },
+
+  initHome: function(){
+    const thisApp = this;
+
+    const homeContainer = document.querySelector(select.containerOf.home);
+    thisApp.home = new Home(homeContainer);
+  },
+
   initData: function(){
     const thisApp = this;
 
@@ -106,17 +115,14 @@ const app = {
   
   init: function(){
     const thisApp = this;
-    // console.log('*** App starting ***');
-    // console.log('thisApp:', thisApp);
-    // console.log('classNames:', classNames);
-    // console.log('settings:', settings);
-    // console.log('templates:', templates);
 
+    thisApp.initHome();
     thisApp.initPages();
     thisApp.initData();
     thisApp.initMenu();
     thisApp.initBooking();
   },
+
 
   initBooking: function(){
     const thisApp = this;
@@ -137,7 +143,9 @@ const app = {
     thisApp.productList.addEventListener('add-to-cart', function(event){
       app.cart.add(event.detail.product);
     });
-  }
+  },
+
+
 
 
 
